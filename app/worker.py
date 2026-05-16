@@ -8,8 +8,6 @@ from app.extractor import extract_text
 
 logger = logging.getLogger(__name__)
 
-client = Anthropic()
-
 ANNOTATION_PROMPT = """You are a financial document analyst. Analyze the following document and return a JSON object with these fields:
 
 {{
@@ -49,6 +47,7 @@ def run_annotation(job_id: str, filename: str, content: bytes, db_session_factor
     Background worker: extract text, run LLM annotation, persist result.
     Called in a background thread — creates its own DB session.
     """
+    client = Anthropic()  # initialized after load_dotenv() has fired
     db = db_session_factory()
     try:
         from app.models import AnnotationJob, JobStatus
