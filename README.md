@@ -1,4 +1,4 @@
-# Spruce Doc Annotator
+# Event-Driven Document Annotator
 
 An event-driven document annotation service for financial documents. Upload a PDF or spreadsheet and get back structured AI-extracted metadata — document type, summary, key entities, financial metrics, risk flags, and analyst follow-up questions.
 
@@ -7,8 +7,8 @@ An event-driven document annotation service for financial documents. Upload a PD
 ## Quickstart
 
 ```bash
-git clone <repo>
-cd spruce-doc-annotator
+git clone https://github.com/pkotecha-eng/event-driven-doc-annotator.git
+cd event-driven-doc-annotator
 
 # 1. Install dependencies
 pip install -r requirements.txt
